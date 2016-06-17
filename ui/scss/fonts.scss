@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'NovecentoWide'; //DemiBold
+    src: url($media + '/fonts/Novecento/Novecentowide-DemiBold-webfont.eot');
+    src: url($media + '/fonts/Novecento/Novecentowide-DemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+    url($media + '/fonts/Novecento/Novecentowide-DemiBold-webfont.woff') format('woff'),
+    url($media + '/fonts/Novecento/Novecentowide-DemiBold-webfont.ttf') format('truetype'),
+    url($media + '/fonts/Novecento/Novecentowide-DemiBold-webfont.svg#NovecentoWide-DemiBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NovecentoWide'; //Medium
+    src: url($media + '/fonts/Novecento/Novecentowide-Medium-webfont.eot');
+    src: url($media + '/fonts/Novecento/Novecentowide-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url($media + '/fonts/Novecento/Novecentowide-Medium-webfont.woff') format('woff'),
+    url($media + '/fonts/Novecento/Novecentowide-Medium-webfont.ttf') format('truetype'),
+    url($media + '/fonts/Novecento/Novecentowide-Medium-webfont.svg#NovecentoWide-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NovecentoWide'; //Normal
+    src: url($media + '/fonts/Novecento/Novecentowide-Normal-webfont.eot');
+    src: url($media + '/fonts/Novecento/Novecentowide-Normal-webfont.eot?#iefix') format('embedded-opentype'),
+    url($media + '/fonts/Novecento/Novecentowide-Normal-webfont.woff') format('woff'),
+    url($media + '/fonts/Novecento/Novecentowide-Normal-webfont.ttf') format('truetype'),
+    url($media + '/fonts/Novecento/Novecentowide-Normal-webfont.svg#NovecentoWide-Normal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NovecentoWide'; //Bold
+    src: url($media + '/fonts/Novecento/Novecentowide-Bold-webfont.eot');
+    src: url($media + '/fonts/Novecento/Novecentowide-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url($media + '/fonts/Novecento/Novecentowide-Bold-webfont.woff') format('woff'),
+    url($media + '/fonts/Novecento/Novecentowide-Bold-webfont.ttf') format('truetype'),
+    url($media + '/fonts/Novecento/Novecentowide-Bold-webfont.svg#NovecentoWide-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sofia_pro_regular';
+    src: url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.eot');
+    src: url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.eot?#iefix') format('embedded-opentype'),
+         url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.woff2') format('woff2'),
+         url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.woff') format('woff'),
+         url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.ttf') format('truetype'),
+         url($media + '/fonts/sofiapro_regular_macroman/SofiaProRegular-webfont.svg#sofia_pro_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    line-height: 0.8em;
+}
