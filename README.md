@@ -134,7 +134,8 @@ Change `height: 100px !important;` to the height of the image you want for mobil
 Change `IMG_CLASS` to the class of the image you declared in step 1.
 
 #### Images are showing weird lines
-Use this on the image `style="display: block; line-height:0; vertical-align: top; font-size: 0px;"`
+Use this on the image `style="display: block; line-height:0; vertical-align: top; font-size: 0px; border-style: none;"`
+Also make sure the image is in the same table as the content if you get me.
 
 ## Checks
 #### Alt & title tags
