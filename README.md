@@ -121,7 +121,7 @@ The solution is the manually set the height of the each image slice (3) in the r
 ```
 <img src="IMG_SRC" width="100%" height="100px" style="display: block; height: 100px; line-height: 50%; width: 100%;" class="IMG_CLASS" border="0">
 ```
-
+ 
 3. And finally, add the media query. Make sure it is inside the curly brackets of`@media screen and (max-width: 525px) { }`
 ```
 img[class="IMG_CLASS"]{
