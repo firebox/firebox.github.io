@@ -112,17 +112,17 @@ Each image is trying to fill the space with 100% width, which is causing the hei
 
 The solution is the manually set the height of the each image slice (3) in the row for desktop and mobile.
 
-1. First, add a class to each image: (Change IMG_CLASS to whatever you want)
+- 1. First, add a class to each image: (Change IMG_CLASS to whatever you want)
 ```
 <img src="IMG_SRC" width="100%" style="display: block; line-height: 50%; width: 100%;" class="IMG_CLASS" border="0">
 ```
 
-2. Then add a height to the image in style and on the image
+- 2. Then add a height to the image in style and on the image
 ```
 <img src="IMG_SRC" width="100%" height="100px" style="display: block; height: 100px; line-height: 50%; width: 100%;" class="IMG_CLASS" border="0">
 ```
- 
-3. And finally, add the media query. Make sure it is inside the curly brackets of`@media screen and (max-width: 525px) { }`
+
+- 3. And finally, add the media query. Make sure it is inside the curly brackets of`@media screen and (max-width: 525px) { }`
 ```
 img[class="IMG_CLASS"]{
     max-width: 100% !important;
