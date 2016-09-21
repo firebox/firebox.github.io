@@ -60,6 +60,18 @@
 
     <script>
 
+    $( document ).ready(function() {
+
+        setTimeout(startScroll,1500);
+    });
+
+
+    function startScroll() {
+        $('html, body').animate({
+            scrollTop: 69
+        }, 300);
+    }
+
     // Hide the menu bar on scroll
     var lastScrollTop = 0;
         $(window).scroll(function(event){
