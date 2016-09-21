@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Product page example</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/animate.css" >
+
+  <style>
+
+  * {
+      box-sizing: border-box;
+  }
+
+      .navigation {
+          position: fixed;
+          width: 100%;
+      }
+
+      .bottom-bar {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          height: 51px;
+          background: #EFEFEF;
+          border-top: 2px solid #E2E2E2;
+      }
+
+      .bottom-bar.down {
+          bottom: -51px;
+      }
+
+  </style>
+
+
+</head>
+
+<body>
+
+    <div class="bottom-bar animated">
+        <div style="position: relative; width: 50%; float: left; display: inline-block; border-right: 2px solid #E2E2E2; padding: 10px; text-align: center;">
+            <img src="img/more-info.png" width="113">
+        </div>
+        <div style="position: relative; width: 50%; float: left; display: inline-block; padding: 10px; text-align: center;">
+            <img src="img/reviews.png" width="117">
+        </div>
+
+    </div>
+
+    <img src="img/navigation.png" class="navigation">
+
+    <img src="img/pp-2-dino.png" style="width: 100%; padding-top: 49px;">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+    <script>
+
+    // Hide the menu bar on scroll
+    var lastScrollTop = 0;
+        $(window).scroll(function(event){
+           var st = $(this).scrollTop();
+           if (st > lastScrollTop){
+               // downscroll code
+               $(".bottom-bar").removeClass("fadeInUp").addClass("fadeOutDown");
+           } else {
+              // upscroll code
+              $(".bottom-bar").removeClass("fadeOutDown").addClass("fadeInUp");
+           }
+           lastScrollTop = st;
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
