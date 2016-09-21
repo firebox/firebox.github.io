@@ -64,13 +64,17 @@
     var lastScrollTop = 0;
         $(window).scroll(function(event){
            var st = $(this).scrollTop();
-           if (st > lastScrollTop){
-               // downscroll code
-               $(".bottom-bar").removeClass("fadeInUp").addClass("fadeOutDown");
-           } else {
-              // upscroll code
-              $(".bottom-bar").removeClass("fadeOutDown").addClass("fadeInUp");
+
+           if(st > 300){
+               if (st > lastScrollTop){
+                   // downscroll code
+                   $(".bottom-bar").removeClass("fadeInUp").addClass("fadeOutDown");
+               } else {
+                  // upscroll code
+                  $(".bottom-bar").removeClass("fadeOutDown").addClass("fadeInUp");
+               }
            }
+
            lastScrollTop = st;
         });
 
