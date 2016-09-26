@@ -239,13 +239,11 @@
             console.log(panzoomstart)
         });
 
-        var isEnabled = $(".header-image__image").panzoom("isDisabled");
-        console.log(isEnabled);
-
         $(".header-image__image").panzoom("option", {
           disablePan: true,
           minScale: 1,
-          maxScale: 5
+          maxScale: 5,
+          panOnlyWhenZoomed: true
         });
 
         var doubleTapBefore = false;
@@ -258,10 +256,20 @@
                 doubleTapBefore = !doubleTapBefore;
                 $('.header-image').slick("slickSetOption", "touchMove", true, true);
                 $('.header-image').slick("slickSetOption", "swipe", true, true);
+
+                $(".header-image__image").panzoom("option", {
+                  disablePan: true
+                });
+                $(".header-image__image").panzoom("resetDimensions");
+
             } else {
                 doubleTapBefore = !doubleTapBefore;
                 $('.header-image').slick("slickSetOption", "touchMove", false, false);
                 $('.header-image').slick("slickSetOption", "swipe", false, false);
+
+                $(".header-image__image").panzoom("option", {
+                  disablePan: false
+                });
             }
 
         });
