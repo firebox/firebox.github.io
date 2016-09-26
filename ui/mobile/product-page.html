@@ -37,6 +37,7 @@
           height: 51px;
           background: #EFEFEF;
           border-top: 2px solid #E2E2E2;
+          z-index: 2;
       }
 
       .bottom-bar.down {
@@ -122,6 +123,43 @@
            outline: 0px solid transparent;
       }
 
+      .sub-section {
+          background: #EFEFEF;
+          padding: 20px;
+      }
+
+      .product-flow {
+          padding: 20px;
+          background: white;
+          overflow-x: scroll;
+          -webkit-overflow-scrolling: touch;
+          width:100%;
+          overflow-y: hidden;
+          white-space: nowrap;
+          position: relative;
+          display: block;
+          margin: 0;
+      }
+
+       .product-flow  ul {
+           margin: 0;
+           padding: 0;
+       }
+
+      .product-flow li{
+          display: inline-block;
+          list-style: none;
+          margin-left: 10px;
+      }
+
+      .product-flow li:first-child {
+          margin-left: 0px;
+      }
+
+      .product-flow li:last-child {
+          margin-right: 20px;
+      }
+
   </style>
 
 
@@ -153,6 +191,26 @@
         <div><img src="img/mighty-animal-speakers-unicorn_28252.jpg" class="header-image__image"></div>
     </div>
 
+    <img src="img/buy-section.png" style="width: 100%; padding: 20px 20px 20px 20px; display: block; margin: 0 auto;">
+
+    <div class="sub-section">
+        <img src="img/more-info-section.png" style="width: 100%; margin: 0 0 20px 0;" id="more-info">
+        <img src="img/reviews-section.png" style="width: 100%; margin: 0 0 20px 0;" id="reviews">
+        <img src="img/shares-section.png" style="width: 100%; margin: 0 0 20px 0;" id="shares">
+        <img src="img/related-top.png" style="width: 100%; margin: 0;" id="related">
+
+        <div class="product-flow">
+            <ul>
+                <li><img src="https://media.firebox.com/product/7358/column_grid_3/bike-balls_17314.gif" width="200"></li>
+                <li><img src="https://media.firebox.com/product/7243/column_grid_3/star-trek-original-series-bluetooth-communicator_21091.jpg" width="200"></li>
+                <li><img src="https://media.firebox.com/product/7285/column_grid_3/hatching-dinosaur-candle_18984.jpg" width="200"></li>
+                <li><img src="https://media.firebox.com/product/7491/column_grid_3/hatching-dragon-candle_25847.jpg" width="200"></li>
+                <li><img src="https://media.firebox.com/product/7573/column_grid_3/the-beard-bib_25566.jpg" width="200"></li>
+                <li><img src="https://media.firebox.com/product/7529/column_grid_3/dino-lamps_25733.jpg" width="200"></li>
+            </ul>
+        </div>
+
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -190,10 +248,22 @@
           maxScale: 5
         });
 
+        var doubleTapBefore = false;
 
         $(".header-image__image").on('doubletap',function(event){
             $(".header-image").toggleClass("full-screen");
             $(".slick-dots").toggleClass("full-screen");
+
+            if(doubleTapBefore) {
+                doubleTapBefore = !doubleTapBefore;
+                $('.header-image').slick("slickSetOption", "touchMove", true, true);
+                $('.header-image').slick("slickSetOption", "swipe", true, true);
+            } else {
+                doubleTapBefore = !doubleTapBefore;
+                $('.header-image').slick("slickSetOption", "touchMove", false, false);
+                $('.header-image').slick("slickSetOption", "swipe", false, false);
+            }
+
         });
 
 
