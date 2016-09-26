@@ -10,6 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/animate.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
   <style>
 
@@ -17,14 +19,20 @@
       box-sizing: border-box;
   }
 
+  body,html {
+      margin: 0;
+      padding: 0;
+  }
+
       .navigation {
           position: fixed;
           width: 100%;
+          z-index: 1;
       }
 
       .bottom-bar {
           position: fixed;
-          bottom: 0;
+          bottom: -51px;
           width: 100%;
           height: 51px;
           background: #EFEFEF;
@@ -33,6 +41,53 @@
 
       .bottom-bar.down {
           bottom: -51px;
+      }
+
+      .bottom-bar.up {
+          bottom: 0px;
+      }
+
+      .header-image {
+          display: block;
+          position: relative;
+          max-height: 275px;
+          overflow: hidden;
+          padding-top: 49px;
+          webkit-transition: all 0.5s linear;
+          -moz-transition: all 0.5s linear;
+          -o-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+      }
+
+      .header-image.full-screen {
+          max-height: 100%;
+      }
+
+      .header-image__image {
+          display: block;
+          border: 0;
+          width: 100%;
+          position: absolute;
+          top: -20%;
+          webkit-transition: all 0.2s linear;
+          -moz-transition: all 0.2s linear;
+          -o-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+      }
+
+      .slick-dots {
+          bottom: 20px;
+      }
+
+      .slick-dots li.slick-active button:before {
+          color: #10DDC2;
+      }
+      .slick-dotted.slick-slider {
+          margin: 0;
+      }
+
+      .slick-slide {
+          min-height: 375px;
       }
 
   </style>
@@ -54,15 +109,48 @@
 
     <img src="img/navigation.png" class="navigation">
 
+    <div class="header-image">
+        <div><img src="img/mighty-animal-speakers_28249.jpg" class="header-image__image"></div>
+        <div><img src="img/mighty-animal-speakers_28250.jpg" class="header-image__image"></div>
+        <div><img src="img/mighty-animal-speakers_28251.jpg" class="header-image__image"></div>
+        <div><img src="img/mighty-animal-speakers-cat_28253.jpg" class="header-image__image"></div>
+        <div><img src="img/mighty-animal-speakers-unicorn_28252.jpg" class="header-image__image"></div>
+    </div>
+
     <img src="img/pp-2-dino.png" style="width: 100%; padding-top: 49px;">
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <script src="js/jquery.panzoom.min.js"></script>
+    <script src="js/doubletap.js"></script>
 
     <script>
 
     $( document ).ready(function() {
 
-        setTimeout(startScroll,1500);
+        $('.header-image').slick({
+            dots: true,
+            arrows: false
+        });
+
+        var st = $(this).scrollTop();
+
+        // if(st === 0) {
+        //     setTimeout(startScroll,1000);
+        // }
+
+        $(".bottom-bar").addClass("up");
+
+        $(".header-image__image").panzoom();
+        $(".header-image__image").panzoom("option", {
+          disablePan: true
+        });
+
+        $(".header-image__image").on('doubletap',function(event){
+            $(".header-image").toggleClass("full-screen");
+        });
+
+
     });
 
 
@@ -77,7 +165,7 @@
         $(window).scroll(function(event){
            var st = $(this).scrollTop();
 
-           if(st > 300){
+           if(st > 100){
                if (st > lastScrollTop){
                    // downscroll code
                    $(".bottom-bar").removeClass("fadeInUp").addClass("fadeOutDown");
