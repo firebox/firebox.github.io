@@ -59,7 +59,6 @@
           transition: all 0.2s linear;
           outline-color: transparent;
           outline: 0px solid transparent;
-          padding-top: 49px;
       }
 
       .header-image:focus {
@@ -105,8 +104,22 @@
           left: 0px;
       }
 
+      .header-container {
+          position: relative;
+          overflow: hidden;
+      }
+
       .slick-dots li.slick-active button:before {
-          color: #10DDC2;
+          color: white;
+      }
+
+      .slick-dots li {
+          margin: 0 10px;
+      }
+
+      .slick-dots li button:before {
+          color: white;
+          font-size: 12px;
       }
       .slick-dotted.slick-slider {
           margin: 0;
@@ -126,18 +139,7 @@
 
       .sub-section {
           background: #EFEFEF;
-          padding: 20px 20px 60px 20px;
-      }
-
-      .header-container {
-          position: relative;
-          overflow: hidden;
-      }
-
-      .header-bottom {
-          position: absolute;
-          bottom: -1px;
-          z-index: 1;
+          padding: 20px;
       }
 
       .product-flow {
@@ -151,6 +153,14 @@
           position: relative;
           display: block;
           margin: 0;
+      }
+
+      .header-badge {
+          top: 10px;
+      }
+
+      .header-badge.full-screen {
+          top: -20px;
       }
 
        .product-flow  ul {
@@ -172,34 +182,12 @@
           margin-right: 20px;
       }
 
-      .slick-next, .slick-prev {
-          z-index: 1;
-      }
-
-      .slick-next {
-          right: 20px;
-      }
-
-      .slick-prev {
-          left: 20px;
-      }
-
-      .slick-next:before {
-          content: url("img/nav-right.png");
-          height: 20px;
-          width: 20px;
-      }
-
-      .slick-prev:before {
-          left: 20px;
-          content: url("img/nav-left.png");
-          height: 20px;
-          width: 20px;
-      }
-
       .double-tap {
           position: absolute;
-          bottom: 0;
+          bottom: 20px;
+          z-index: 1;
+          margin-left: -101px;
+          left: 50%;
       }
 
   </style>
@@ -210,26 +198,30 @@
 <body>
 
     <div class="bottom-bar animated">
-        <div style="position: relative; width: 50%; background: #FFFFFF; float: left; display: inline-block; border-right: 2px solid #E2E2E2; padding: 14px 10px; text-align: center;">
+        <div style="position: relative; width: 50%; background: #FFFFFF; float: left; display: inline-block; border-right: 1px solid #E2E2E2; padding: 14px 10px; text-align: center;">
             <a href="#more-info">
-                <img src="img/more-info-btn-1.png" width="113">
+                <img src="img/more-info-btn-2.png" width="113">
             </a>
         </div>
-        <div style="position: relative; background: #FFF6DE; width: 50%; float: left; display: inline-block; padding: 14px 10px; text-align: center;">
+        <div style="position: relative; background: #FFFFFF; width: 50%; float: left; display: inline-block; padding: 14px 10px; text-align: center;">
             <a href="#reviews">
-                <img src="img/reviews-btn-1.png" width="117">
+                <img src="img/reviews-btn-2.png" width="117">
             </a>
         </div>
 
     </div>
 
+
     <img src="img/navigation.png" class="navigation">
+
+    <img src="img/text-top-1.png" style="width: 337px; padding: 69px 20px 20px 20px;">
 
     <div class="header-container">
 
-        <div class="header-bottom">
-            <img src="img/badges.png">
-        </div>
+        <img src="img/double-tap.png" class="double-tap">
+
+        <img src="img/badges-2.png" style="position: absolute; z-index: 1; left: 20px;" class="header-badge">
+
         <div class="header-image" id="top">
             <div><img src="https://media.firebox.com/product/7285/column_grid_8/hatching-dinosaur-candle_18984.jpg" class="header-image__image"></div>
             <div><img src="https://media.firebox.com/product/7285/extra1_column_grid_8/hatching-dinosaur-candle_18985.jpg" class="header-image__image"></div>
@@ -237,7 +229,7 @@
         </div>
     </div>
 
-    <img src="img/text-top.png" style="width: 100%; padding: 20px 20px 20px 20px; display: block; margin: 0 auto;">
+    <img src="img/buy-section.png" style="width: 100%; padding: 20px 20px 20px 20px; display: block; margin: 0 auto;">
 
     <div class="sub-section">
         <a href="#top"><img src="img/more-info-section.png" style="width: 100%; margin: 0 0 20px 0;" id="more-info"></a>
@@ -270,10 +262,17 @@
     $( document ).ready(function() {
 
         $('.header-image').slick({
-            dots: false,
-            arrows: true
+            dots: true,
+            arrows: false
         });
 
+        var st = $(this).scrollTop();
+
+        if(st === 0) {
+            setTimeout(startScroll,1500);
+        }
+
+        setTimeout(hideDouble,3000);
 
         $(".bottom-bar").addClass("up");
 
@@ -288,11 +287,29 @@
           panOnlyWhenZoomed: true
         });
 
+        $(".double-tap").click(function() {
+            $('.double-tap').fadeOut("slow");
+        });
+
         var doubleTapBefore = false;
+
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top - 70
+                }, 1000);
+                return false;
+              }
+            }
+          });
 
         $(".header-image__image").on('doubletap',function(event){
             $(".header-image").toggleClass("full-screen");
             $(".slick-dots").toggleClass("full-screen");
+            $(".header-badge").toggleClass("full-screen");
 
             if(doubleTapBefore) {
                 doubleTapBefore = !doubleTapBefore;
@@ -318,27 +335,17 @@
         });
 
 
-        $('a[href*="#"]:not([href="#"])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                $('html, body').animate({
-                  scrollTop: target.offset().top - 70
-                }, 1000);
-                return false;
-              }
-            }
-          });
-
-
     });
 
 
     function startScroll() {
         $('html, body').animate({
-            scrollTop: 0
+            scrollTop: 79
         }, 300);
+    }
+
+    function hideDouble() {
+        $('.double-tap').fadeOut("slow");
     }
 
     // Hide the menu bar on scroll
