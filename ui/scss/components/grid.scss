@@ -72,8 +72,9 @@
 .fb-row:after {
     content:"";
     display: table ;
-     clear:both;
+    clear:both;
 }
+
 
 .fb-reverse {
   -webkit-box-orient: vertical;
