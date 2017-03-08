@@ -11,6 +11,16 @@ body {
   font-weight: normal;
   background: #FFFFFF; }
 
+  .header {
+    padding: 20px 0;
+    position: fixed;
+    background: white;
+  }
+
+  .header.scroll {
+    background: rgba(256,256,256,0.9);
+  }
+
 .overlay {
   position: fixed;
   display: flex;
