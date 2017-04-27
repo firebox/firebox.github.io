@@ -7,7 +7,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php if(is_home()) bloginfo('name'); else wp_title(''); ?></title>
+		<meta name="title" content="<?php the_title();?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
+		<title><?php wp_title(''); ?></title>
+
+		<!-- dns prefetch -->
+		<link href="//www.google-analytics.com" rel="dns-prefetch">
+
+		<!-- icons -->
+		<link rel="shortcut icon" href="https://media.firebox.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -74,15 +82,15 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-xs-4">
         <a href="https://firebox.com?via=blog" alt="Shop Firebox.com main store" title="Shop Firebox.com main store">Shop Firebox</a>
       </div>
-      <div class="col-md-4 tac">
+      <div class="col-xs-4 tac">
         <a href="<?php echo site_url(); ?>" title="Firebox.com - Not for Everyone blog">
           <img src="<?php echo site_url(); ?>/wp-content/uploads/logo-1.png" class="header__logo" alt="Firebox.com - Logo" title="Firebox.com - Logo">
         </a>
       </div>
-      <div class="col-md-3 col-md-offset-1 tar">
+      <div class="col-xs-3 col-md-3 col-md-offset-1 tar">
         <div class="social-links__header">
           <a href="https://facebook.com/firebox" title="Firebox.com Facebook">
             <img src="<?php echo site_url(); ?>/wp-content/uploads/icon_fb.png" height="16">
