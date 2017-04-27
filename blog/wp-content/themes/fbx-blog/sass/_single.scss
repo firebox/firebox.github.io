@@ -32,6 +32,13 @@
 
   &__breadcrumbs {
     margin: 0 0 2rem 0;
+    font-size: 0.875rem;
+    color: lighten($charcoal,30%);
+
+    a {
+      color: lighten($charcoal,30%);
+    }
+
   }
 
   &__social {
@@ -72,6 +79,16 @@
 
   &__action {
     margin: 1rem 0 3rem 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+    }
+
   }
 
   &__info {
@@ -172,17 +189,25 @@
 }
 
 .wp-caption-text {
-  font-size: 0.875rem;
   color: lighten(#343434,30%);
   font-style: italic;
   margin-top: 0.5rem;
   text-align: left;
+
+  @include phone-xs-up {
+    font-size: 0.75rem;
+  }
+
+  @include tablet-up {
+    font-size: 0.875rem;
+  }
 }
 
 .gallery-item {
 
   img {
     max-width: 100%;
+    height: auto;
     border: none;
   }
 
