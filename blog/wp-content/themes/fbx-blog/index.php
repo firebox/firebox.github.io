@@ -26,7 +26,6 @@
         	</div>
 
         <?php endwhile; endif; ?>
-
     </div>
 
     <div class="grid-mobile visible-xs">

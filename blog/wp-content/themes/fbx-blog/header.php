@@ -8,11 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php if(is_home()) bloginfo('name'); else wp_title(''); ?></title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <?php wp_head(); ?>
 
@@ -30,7 +27,7 @@
     </div>
     <div class="col-xs-9">
       <a href="<?php echo site_url(); ?>" title="Firebox.com - Not for Everyone blog">
-        <img src="<?php echo site_url(); ?>/wp-content/uploads/logo.png" class="header__logo" alt="Firebox.com - Logo" title="Firebox.com - Logo">
+        <img src="<?php echo site_url(); ?>/wp-content/uploads/logo-1.png" class="header__logo" alt="Firebox.com - Logo" title="Firebox.com - Logo">
       </a>
     </div>
   </div>
@@ -82,7 +79,7 @@
       </div>
       <div class="col-md-4 tac">
         <a href="<?php echo site_url(); ?>" title="Firebox.com - Not for Everyone blog">
-          <img src="<?php echo site_url(); ?>/wp-content/uploads/logo.png" class="header__logo" alt="Firebox.com - Logo" title="Firebox.com - Logo">
+          <img src="<?php echo site_url(); ?>/wp-content/uploads/logo-1.png" class="header__logo" alt="Firebox.com - Logo" title="Firebox.com - Logo">
         </a>
       </div>
       <div class="col-md-3 col-md-offset-1 tar">

@@ -50,7 +50,7 @@
 
 }
 
-.nav {
+.nav, .menu-main-menu-container {
   margin: 2rem 0;
 
   &-mobile {
@@ -73,7 +73,7 @@
       a {
         text-decoration: none;
       }
-      
+
     }
 
     &__social {
@@ -107,6 +107,7 @@
           padding-bottom: 2rem;
           display: block;
           text-decoration: none;
+          background: transparent;
         }
       }
     }
@@ -115,6 +116,17 @@
   ul {
     padding: 0;
     margin: 0;
+
+    & > li {
+      position: relative;
+      display: inline-block;
+
+      a {
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
 
     li {
       position: relative;

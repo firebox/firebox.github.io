@@ -1,13 +1,17 @@
 jQuery(document).ready(function($) {
 
-
-  $('.grid').masonry({
-    // set itemSelector so .grid-sizer is not used in layout
-    itemSelector: '.grid-item',
+  // init Masonry
+  var $grid = $('.grid').masonry({
+    temSelector: '.grid-item',
     percentPosition: true,
     fitWidth: true,
     horizontalOrder: true,
     columnWidth: '.grid-sizer',
+  });
+  
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
   });
 
   $(".container").fitVids();
