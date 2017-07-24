@@ -135,6 +135,10 @@
         color: lighten(#343434,20%);
         margin-bottom: 1rem;
       }
+
+      img {
+          height: auto;
+      }
     }
 
     @include tablet-up {
@@ -157,7 +161,7 @@
       }
       p {
         color: lighten(#343434,20%);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
     }
 
@@ -167,6 +171,7 @@
 
     img {
       max-width: 100%;
+      height: auto;
     }
 
   }

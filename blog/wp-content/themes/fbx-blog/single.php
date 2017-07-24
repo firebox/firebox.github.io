@@ -14,7 +14,13 @@
           <div class="single-post__breadcrumbs">
             <?php if ( function_exists('yoast_breadcrumb') ) {
             yoast_breadcrumb('<p id="breadcrumbs">','</p>'); } ?></div>
-          <?php if ( has_post_thumbnail() ) { the_post_thumbnail('large',['class' => 'single-post__feature-image']); $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() ); } ?>
+
+          <?php if(get_field('post_image')) { ?>
+            <img src="<?php the_field('post_image') ?>" class="single-post__feature-image">
+          <?php } else { ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('large',['class' => 'single-post__feature-image']); $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() ); } ?>
+          <?php } ?>
+
 
           <div class="single-post__action hidden-xs">
             <div class="row">

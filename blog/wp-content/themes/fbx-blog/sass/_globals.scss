@@ -16,6 +16,14 @@ body{
     box-sizing:border-box;
 }
 
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
 .tar {
   text-align: right;
 }
@@ -64,6 +72,15 @@ h5 {
   font-size: 1rem;
 }
 
+ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  list-style: circle;
+  margin-bottom: 0.5rem;
+}
 
 .form-control {
   min-height: 38px;
@@ -75,6 +92,7 @@ h5 {
 
 .aligncenter {
   margin: 0 auto;
+  display: block;
 }
 /* =======================================================================
 ## ++ Cleafix
